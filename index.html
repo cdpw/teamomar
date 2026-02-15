@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>marteamo</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:#fff0f5;
+    text-align:center;
+}
+
+.container{
+    padding:40px;
+}
+
+h1{
+    font-size:40px;
+    color:#e91e63;
+}
+
+input{
+    padding:10px;
+    font-size:16px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+button{
+    padding:10px 25px;
+    font-size:16px;
+    border:none;
+    background:#e91e63;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.hidden{
+    display:none;
+}
+
+.carta{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    margin:40px auto;
+    max-width:700px;
+}
+
+.carta img{
+    width:200px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+.gallery{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+.frase{
+    margin-top:40px;
+    font-size:22px;
+    color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Feliz San Valentín Mar Puta</h1>
+
+    <p>Ingresa la contraseña para entrar 💖</p>
+
+    <input type="password" id="clave" placeholder="Contraseña">
+    <br>
+    <button onclick="verificar()">Entrar</button>
+
+    <div id="contenido" class="hidden">
+
+        <div class="carta">
+            <h2>Para ti Marciano 💌</h2>
+            <p>feliz dia del amot y la amistad mar.<br><br> 
+           kiero k sepas k te amo y ke eres una persona  
+       sumamente importante para mi ike mgustas mucho ike eres 
+         realmente todo loke kiero y ps wueres ser mi nobia
+          formalmante uwu ?? asi de berdad i decirnos amor
+        i amarnos mucho y aser kosas denobios y asi y bueno 
+                 espero t guste mucho este detalle
+
+       .<br> con amor i mucho kariño pablo te amo! </p>
+
+            <img src="carta.jpg">
+        </div>
+
+        <div class="gallery">
+
+            <!-- 20 FOTOS -->
+            <img src="foto1.jpg">
+            <img src="foto2.jpg">
+            <img src="foto3.jpg">
+            <img src="foto4.jpg">
+            <img src="foto5.jpg">
+            <img src="foto6.jpg">
+            <img src="foto7.jpg">
+            <img src="foto8.jpg">
+            <img src="foto9.jpg">
+            <img src="foto10.jpg">
+            <img src="foto11.jpg">
+            <img src="foto12.jpg">
+            <img src="foto13.jpg">
+            <img src="foto14.jpg">
+            <img src="foto15.jpg">
+            <img src="foto16.jpg">
+            <img src="foto17.jpg">
+            <img src="foto18.jpg">
+            <img src="foto19.jpg">
+            <img src="foto20.jpg">
+
+            <!-- 10 GIFS -->
+            <img src="gif1.gif">
+            <img src="gif2.gif">
+            <img src="gif3.gif">
+            <img src="gif4.gif">
+            <img src="gif5.gif">
+            <img src="gif6.gif">
+            <img src="gif7.gif">
+            <img src="gif8.gif">
+            <img src="gif9.gif">
+            <img src="gif10.gif">
+
+        </div>
+
+        <div class="frase">
+            somos todos esos :3
+        </div>
+
+    </div>
+
+</div>
+
+<audio id="musica" src="musica.mp3"></audio>
+
+<script>
+function verificar(){
+    var contraseña = "pene"; // ← cambia aquí la contraseña
+    var ingreso = document.getElementById("clave").value;
+
+    if(ingreso === contraseña){
+        document.getElementById("contenido").classList.remove("hidden");
+
+        var audio = document.getElementById("musica");
+        audio.volume = 0;
+        audio.play();
+
+        var volumen = 0;
+        var fade = setInterval(function(){
+            if(volumen < 1){
+                volumen += 0.05;
+                audio.volume = volumen;
+            } else {
+                clearInterval(fade);
+            }
+        }, 200); // 4 segundos aprox
+    }else{
+        alert("Contraseña incorrecta 💔");
+    }
+}
+</script>
+
+</body>
+</html>
